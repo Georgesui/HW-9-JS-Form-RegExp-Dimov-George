@@ -6,6 +6,7 @@ const ourErrorTag = document.querySelector('.body__error')
 
 containerBody.addEventListener('click', (event) => {
 	if (event.target === buttonNeeded && ourInputOnPage.value !== '') {
+
 		if (ourInputOnPage.value.match(/^[a-zA-Z0-9]{2,25}$/g)) {
 			let newLiInList = document.createElement('li');
 			newLiInList.innerHTML = `${ourInputOnPage.value} <button class = "remove">REMOVE</button>`
@@ -14,9 +15,7 @@ containerBody.addEventListener('click', (event) => {
 			ourErrorTag.classList.add('body__error-done');
 			ourInputOnPage.classList.remove('rejected');
 			ourInputOnPage.addEventListener('change', (event) => {
-				if (ourInputOnPage.value.match(/^[a-zA-Z0-9]{2,25}$/g))
-					console.log('change', event)
-				return;
+				event.target.value.match(/^[a-zA-Z0-9]{2,25}$/g);
 			})
 			return;
 		}
@@ -39,18 +38,3 @@ containerBody.addEventListener('click', (event) => {
 		return;
 	}
 })
-
-// function acceptanceOfValues(changes) {
-// 	const regExp = /[\w]{2,25}/ig;
-// 	let validation = regExp.text(changes);
-// 	if (!validation) {
-// 		ourInputOnPage.setAttribute('class', 'rejected');
-// 		ourErrorTag.classList.remove('body__error-done');
-// 		ourErrorTag.innerHTML = 'Ошибка, введите верные данные';
-// 	}
-// 	else
-// }
-
-// ourInputOnPage.addEventListener('input', (event) => {
-// 	event.target.value.match((/[\w]{2,25}/g));
-// })
