@@ -9,7 +9,7 @@ containerBody.addEventListener('click', (event) => {
 
 		if (ourInputOnPage.value.match(/^[a-zA-Z0-9]{2,25}$/g)) {
 			let newLiInList = document.createElement('li');
-			newLiInList.innerHTML = `${ourInputOnPage.value} <button class = "remove">REMOVE</button>`
+			newLiInList.innerHTML = `${ourInputOnPage.value} <button class = "remove">REMOVE</button>`;
 			ourInputOnPage.value = '';
 			ourList.appendChild(newLiInList).setAttribute('class', 'process');
 			ourErrorTag.classList.add('body__error-done');
